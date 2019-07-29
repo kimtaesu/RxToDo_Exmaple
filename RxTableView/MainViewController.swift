@@ -11,8 +11,8 @@ import RxDataSources
 import RxSwift
 import UIKit
 
-struct Data {
-    var title: String
+struct MemoData {
+    var content: String
 }
 
 struct SectionOfCustomData {
@@ -20,7 +20,7 @@ struct SectionOfCustomData {
 }
 
 extension SectionOfCustomData: SectionModelType {
-    typealias Item = Data
+    typealias Item = MemoData
 
     init(original: SectionOfCustomData, items: [Item]) {
         self = original
@@ -29,15 +29,14 @@ extension SectionOfCustomData: SectionModelType {
 }
 
 class MainViewController: UIViewController {
-    var dataArray = [Data]()
+    var memo = [MemoData]()
     var disposeBag = DisposeBag()
 
     var mainOwnView: MainView {
         return self.view as! MainView
     }
 
-    var items = BehaviorRelay<[String]>(value: [])
-    var testItems = BehaviorRelay<[Data]>(value: [])
+    var memoItems = BehaviorRelay<[MemoData]>(value: [])
 
     func addItem() {
         let alert = UIAlertController(title: "입력", message: "내용입력", preferredStyle: .alert)
@@ -47,8 +46,8 @@ class MainViewController: UIViewController {
                 .filter { $0 != "" }
                 .drive(onNext: { str in
                     print(str)
-                    self.dataArray.append(Data(title: str))
-                    self.testItems.accept(self.dataArray)
+                    self.memo.append(MemoData(content: str))
+                    self.memoItems.accept(self.memo)
                 })
                 .disposed(by: self.disposeBag)
         }
@@ -78,15 +77,15 @@ class MainViewController: UIViewController {
 
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(
             configureCell: { _, _, indexPath, item in
-                let cell = self.mainOwnView.mainTableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
+                let mainCell = self.mainOwnView.mainTableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
 
-                if let cell = cell as? MainCell {
-                    cell.mainTitleLabel.text = item.title
+                if let cell = mainCell as? MainCell {
+                    cell.mainTitleLabel.text = item.content
 
                     return cell
                 }
 
-                return cell
+                return mainCell
             }
         )
 
@@ -112,17 +111,17 @@ class MainViewController: UIViewController {
             true
         }
 
-        self.testItems.accept(self.dataArray)
+        self.memoItems.accept(self.memo)
 
-        self.testItems.asDriver()
+        self.memoItems.asDriver()
             .map { [SectionOfCustomData(items: $0)] }
             .drive(self.mainOwnView.mainTableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemDeleted.asDriver()
             .drive(onNext: { indexPath in
-                self.dataArray.remove(at: indexPath.row)
-                self.testItems.accept(self.dataArray)
+                self.memo.remove(at: indexPath.row)
+                self.memoItems.accept(self.memo)
             })
             .disposed(by: self.disposeBag)
 
@@ -135,10 +134,10 @@ class MainViewController: UIViewController {
 
         self.mainOwnView.mainTableView.rx.itemMoved.asDriver()
             .drive(onNext: { sourceIndexPath, destinationIndexPath in
-                let targetData = self.dataArray[sourceIndexPath.row]
-                self.dataArray.remove(at: sourceIndexPath.row)
-                self.dataArray.insert(targetData, at: destinationIndexPath.row)
-                self.testItems.accept(self.dataArray)
+                let targetData = self.memo[sourceIndexPath.row]
+                self.memo.remove(at: sourceIndexPath.row)
+                self.memo.insert(targetData, at: destinationIndexPath.row)
+                self.memoItems.accept(self.memo)
             })
             .disposed(by: self.disposeBag)
 
