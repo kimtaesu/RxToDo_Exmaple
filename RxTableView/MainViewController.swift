@@ -11,32 +11,13 @@ import RxDataSources
 import RxSwift
 import UIKit
 
-struct MemoData {
-    var content: String
-}
-
-struct SectionOfCustomData {
-    var items: [Item]
-}
-
-extension SectionOfCustomData: SectionModelType {
-    typealias Item = MemoData
-
-    init(original: SectionOfCustomData, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}
-
 class MainViewController: UIViewController {
-    var memo = [MemoData]()
+    let viewModel = MainViewModel()
     var disposeBag = DisposeBag()
 
     var mainOwnView: MainView {
         return self.view as! MainView
     }
-
-    var memoItems = BehaviorRelay<[MemoData]>(value: [])
 
     func addItem() {
         let alert = UIAlertController(title: "입력", message: "내용입력", preferredStyle: .alert)
@@ -44,10 +25,8 @@ class MainViewController: UIViewController {
 
             alert.textFields?[0].rx.text.orEmpty.asDriver()
                 .filter { $0 != "" }
-                .drive(onNext: { str in
-                    print(str)
-                    self.memo.append(MemoData(content: str))
-                    self.memoItems.accept(self.memo)
+                .drive(onNext: { [weak self] str in
+                    self?.viewModel.insertItem(str: str)
                 })
                 .disposed(by: self.disposeBag)
         }
@@ -90,16 +69,16 @@ class MainViewController: UIViewController {
         )
 
         editButton.rx.tap.asDriver()
-            .drive(onNext: { _ in
-                self.mainOwnView.mainTableView.setEditing(true, animated: true)
-                self.navigationItem.leftBarButtonItem = doneButton
+            .drive(onNext: { [weak self] _ in
+                self?.mainOwnView.mainTableView.setEditing(true, animated: true)
+                self?.navigationItem.leftBarButtonItem = doneButton
             })
             .disposed(by: self.disposeBag)
 
         doneButton.rx.tap.asDriver()
-            .drive(onNext: { _ in
-                self.mainOwnView.mainTableView.setEditing(false, animated: true)
-                self.navigationItem.leftBarButtonItem = editButton
+            .drive(onNext: { [weak self] _ in
+                self?.mainOwnView.mainTableView.setEditing(false, animated: true)
+                self?.navigationItem.leftBarButtonItem = editButton
             })
             .disposed(by: self.disposeBag)
 
@@ -111,33 +90,26 @@ class MainViewController: UIViewController {
             true
         }
 
-        self.memoItems.accept(self.memo)
-
-        self.memoItems.asDriver()
+        self.viewModel.memoItems.asDriver()
             .map { [SectionOfCustomData(items: $0)] }
             .drive(self.mainOwnView.mainTableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemDeleted.asDriver()
-            .drive(onNext: { indexPath in
-                self.memo.remove(at: indexPath.row)
-                self.memoItems.accept(self.memo)
+            .drive(onNext: { [weak self] indexPath in
+                self?.viewModel.removeItem(indexPath: indexPath)
             })
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemSelected.asDriver()
-            .drive(onNext: { indexPath in
-                print(indexPath.row)
-                self.mainOwnView.mainTableView.deselectRow(at: indexPath, animated: true)
+            .drive(onNext: { [weak self] indexPath in
+                self?.mainOwnView.mainTableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemMoved.asDriver()
-            .drive(onNext: { sourceIndexPath, destinationIndexPath in
-                let targetData = self.memo[sourceIndexPath.row]
-                self.memo.remove(at: sourceIndexPath.row)
-                self.memo.insert(targetData, at: destinationIndexPath.row)
-                self.memoItems.accept(self.memo)
+            .drive(onNext: { [weak self] sourceIndexPath, destinationIndexPath in
+                self?.viewModel.moveItem(sourceIndexPath: sourceIndexPath, destinationIndexPath: destinationIndexPath)
             })
             .disposed(by: self.disposeBag)
 

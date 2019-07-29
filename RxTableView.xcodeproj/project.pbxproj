@@ -14,6 +14,7 @@
 		B413844322EE7F6C00B14BEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B413844122EE7F6C00B14BEF /* LaunchScreen.storyboard */; };
 		B413844B22EE823300B14BEF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413844A22EE823300B14BEF /* MainView.swift */; };
 		B413844D22EE832100B14BEF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413844C22EE832100B14BEF /* MainTableViewCell.swift */; };
+		B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B413844422EE7F6C00B14BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B413844A22EE823300B14BEF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B413844C22EE832100B14BEF /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CF4F20EC97EE7DED06631148 /* Pods_RxTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				B413843822EE7F6A00B14BEF /* AppDelegate.swift */,
 				B413844A22EE823300B14BEF /* MainView.swift */,
 				B413843A22EE7F6A00B14BEF /* MainViewController.swift */,
+				B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */,
 				B413844C22EE832100B14BEF /* MainTableViewCell.swift */,
 				B413843F22EE7F6C00B14BEF /* Assets.xcassets */,
 				B413844122EE7F6C00B14BEF /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */,
 				B413843B22EE7F6A00B14BEF /* MainViewController.swift in Sources */,
 				B413844B22EE823300B14BEF /* MainView.swift in Sources */,
 				B413844D22EE832100B14BEF /* MainTableViewCell.swift in Sources */,
