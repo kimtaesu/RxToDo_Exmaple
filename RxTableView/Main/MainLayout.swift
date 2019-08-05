@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainView: UIView {
+class MainLayout: UIView {
     let mainTableView: UITableView = {
         let mainTableView = UITableView()
         mainTableView.tableFooterView = UIView()
