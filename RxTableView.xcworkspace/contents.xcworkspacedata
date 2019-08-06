@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RxTableView.xcodeproj">
+      location = "group:/Users/meo/Documents/Coding/RxToDo_Exmaple/RxToDo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
