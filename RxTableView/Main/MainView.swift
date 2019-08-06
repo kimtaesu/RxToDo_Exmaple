@@ -15,7 +15,8 @@ class MainView: UIViewController {
     var disposeBag = DisposeBag()
     var doneButton: UIBarButtonItem?
     var editButton: UIBarButtonItem?
-    let viewModel = MainViewModel()
+    let mainViewModel = MainViewModel()
+    let actionViewModel = ActionViewModel()
 
     var mainOwnView: MainLayout {
         return self.view as! MainLayout
@@ -23,8 +24,8 @@ class MainView: UIViewController {
 
     func addItem() {
         let addView = AddTodoView()
-        addView.addToDoViewModel.delegate = self.viewModel
-        addView.addToDoViewModel.currentDataCounter = self.viewModel.memo.count
+        addView.addToDoViewModel.delegate = self.mainViewModel
+        addView.addToDoViewModel.currentDataCounter = self.mainViewModel.mainData.memo.count + 1
         let newNavi = UINavigationController(rootViewController: addView)
         self.present(newNavi, animated: true)
     }
@@ -39,6 +40,14 @@ class MainView: UIViewController {
                 let mainCell = self.mainOwnView.mainTableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath)
                 if let cell = mainCell as? MainCell {
                     cell.mainTitleLabel.text = item.title
+                    cell.checkButton.tag = item.id
+
+                    if item.isCheck == true {
+                        cell.checkButton.backgroundColor = UIColor(named: "AzureRadiance")
+                    } else {
+                        cell.checkButton.backgroundColor = .white
+                    }
+
                     return cell
                 }
                 return mainCell
@@ -53,18 +62,18 @@ class MainView: UIViewController {
             true
         }
 
-        self.viewModel.memoData.asDriver()
+        self.mainViewModel.mainData.memoData.asDriver()
             .drive(self.mainOwnView.mainTableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemDeleted
             .map { ActionList.deleteItem($0) }
-            .bind(to: self.viewModel.actionEvent)
+            .bind(to: self.actionViewModel.actionEvent)
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx.itemMoved
             .map { ActionList.moveItem($0) }
-            .bind(to: self.viewModel.actionEvent)
+            .bind(to: self.actionViewModel.actionEvent)
             .disposed(by: self.disposeBag)
 
         self.mainOwnView.mainTableView.rx
@@ -115,12 +124,6 @@ class MainView: UIViewController {
     override func viewDidLoad() {
         self.navigationItem.title = "ToDo"
         self.mainOwnView.mainTableView.rowHeight = 44
-
-        self.viewModel.isEdit.asDriver()
-            .drive(onNext: { Bool in
-                print(Bool)
-            })
-            .disposed(by: self.disposeBag)
     }
 }
 

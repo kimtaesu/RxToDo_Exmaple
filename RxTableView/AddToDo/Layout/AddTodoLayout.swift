@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// AddToDo 뷰를 그려준다
 class AddToDoLayout: UIView {
     let toDoTitleTextFiled: UITextField = {
         let toDotitleTextField = UITextField()

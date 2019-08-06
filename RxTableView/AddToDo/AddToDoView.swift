@@ -24,8 +24,12 @@ class AddTodoView: UIViewController {
         self.dismiss(animated: true)
     }
 
-    func activateButton(isData: Bool) {
-        if isData != true {
+    /// TextField의 값이 존재하면 rightBarButtonItem을 바꾼다.
+    /// -> TextField의 값이 없으면 rightBarButtonItem을 없애고 있으면 버튼을 표시한다.
+    ///
+    /// - Parameter isEmptyTextField: TextField가 비어있는 지 아닌 지 넘겨받는 값
+    func activateButton(isEmptyTextField: Bool) {
+        if isEmptyTextField != true {
             self.navigationItem.rightBarButtonItem = nil
         } else {
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
@@ -38,7 +42,8 @@ class AddTodoView: UIViewController {
         }
     }
 
-    func bindNavigationBuutton() {
+    /// 기본적인 leftBarButtonItem을 생성한다.
+    func bindNavigationButton() {
         let dismissButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
         self.navigationItem.leftBarButtonItem = dismissButton
         dismissButton.rx.tap.asDriver()
@@ -46,7 +51,8 @@ class AddTodoView: UIViewController {
             .disposed(by: self.disposeBag)
     }
 
-    func bindeTextField() {
+    /// toDoTitleTextFiled의 값의 변화에 따라 TextFiled값을 넘겨주거나 TextFiled의 값이 비어있는지 체크한다.
+    func bindTextField() {
         self.addOwnView.toDoTitleTextFiled.rx.text.orEmpty
             .bind(to: self.addToDoViewModel.textFieldData)
             .disposed(by: self.disposeBag)
@@ -56,12 +62,14 @@ class AddTodoView: UIViewController {
             .disposed(by: self.disposeBag)
     }
 
-    func bindUI() {
+    /// addDateButton와 액션을 bind한다.
+    func bindDateButton() {
         self.addOwnView.addDateButton.rx.tap
             .bind(onNext: self.addDate)
             .disposed(by: self.disposeBag)
     }
 
+    /// ToDo에 날짜를 지정한다.
     func addDate() {
         let alert = DatePickerAlertController(title: "날짜 지정", message: "날짜를 지정해주세요", preferredStyle: .actionSheet)
         let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
@@ -90,8 +98,8 @@ class AddTodoView: UIViewController {
 
     override func viewDidLoad() {
         self.navigationItem.title = "Add"
-        self.bindNavigationBuutton()
-        self.bindeTextField()
-        self.bindUI()
+        self.bindNavigationButton()
+        self.bindTextField()
+        self.bindDateButton()
     }
 }

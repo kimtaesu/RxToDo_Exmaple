@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// UIAlertController에 DatePicker를 추가한다.
 class DatePickerAlertController: UIAlertController {
     lazy var targetView: UIView = {
         guard let targetView = view.subviews.first else {
@@ -34,6 +35,9 @@ class DatePickerAlertController: UIAlertController {
         ])
     }
 
+    /// 선호하는 첫 번째 언어를 구한다.
+    ///
+    /// - Returns: 선호하는 첫 번째 언어를 리턴한다.
     func getPreferredLocale() -> Locale {
         guard let preferredIdentifier = Locale.preferredLanguages.first else {
             return Locale.current
@@ -41,6 +45,9 @@ class DatePickerAlertController: UIAlertController {
         return Locale(identifier: preferredIdentifier)
     }
 
+    /// DatePicker에서 선택한 날짜를 String으로 변환한다.
+    ///
+    /// - Returns: DatePciker에서 선택한 날짜를 String으로 변환한 값
     func dateConvertToString() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent

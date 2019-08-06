@@ -24,6 +24,9 @@
 		B44B173022F90EB600813EDB /* DatePickerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B172F22F90EB600813EDB /* DatePickerAlertController.swift */; };
 		B44B173322F9437900813EDB /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B173222F9437900813EDB /* Delegate.swift */; };
 		B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */; };
+		B4C5EF7C22F9527D00CFEC19 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7B22F9527D00CFEC19 /* ActionViewModel.swift */; };
+		B4C5EF7E22F953FB00CFEC19 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7D22F953FB00CFEC19 /* MainDataManager.swift */; };
+		B4C5EF8022F975B500CFEC19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7F22F975B500CFEC19 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		B44B172F22F90EB600813EDB /* DatePickerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerAlertController.swift; sourceTree = "<group>"; };
 		B44B173222F9437900813EDB /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		B4C5EF7B22F9527D00CFEC19 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
+		B4C5EF7D22F953FB00CFEC19 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
+		B4C5EF7F22F975B500CFEC19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		CF4F20EC97EE7DED06631148 /* Pods_RxTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +134,9 @@
 				B443E0FC22F855AD00500519 /* enum */,
 				B413843A22EE7F6A00B14BEF /* MainView.swift */,
 				B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */,
+				B4C5EF7B22F9527D00CFEC19 /* ActionViewModel.swift */,
+				B4C5EF7D22F953FB00CFEC19 /* MainDataManager.swift */,
+				B4C5EF7F22F975B500CFEC19 /* CoreDataManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -316,6 +325,8 @@
 				B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */,
 				B44B173022F90EB600813EDB /* DatePickerAlertController.swift in Sources */,
 				B413843B22EE7F6A00B14BEF /* MainView.swift in Sources */,
+				B4C5EF8022F975B500CFEC19 /* CoreDataManager.swift in Sources */,
+				B4C5EF7C22F9527D00CFEC19 /* ActionViewModel.swift in Sources */,
 				B413844B22EE823300B14BEF /* MainLayout.swift in Sources */,
 				B4168B2722F8056000B1C050 /* AddToDoViewModel.swift in Sources */,
 				B4168AF422F7E33500B1C050 /* ToDoData.swift in Sources */,
@@ -326,6 +337,7 @@
 				B4168B2522F7FBDE00B1C050 /* AddTodoLayout.swift in Sources */,
 				B413843922EE7F6A00B14BEF /* AppDelegate.swift in Sources */,
 				B4168AFF22F7E8C600B1C050 /* AddToDoView.swift in Sources */,
+				B4C5EF7E22F953FB00CFEC19 /* MainDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
