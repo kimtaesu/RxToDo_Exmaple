@@ -19,12 +19,11 @@ class AddToDoViewModel {
     var textFieldData = PublishSubject<String>()
     var isEmptyTextField = BehaviorSubject<Bool>(value: false)
     var todoDateData = BehaviorSubject<String>(value: "날짜 지정")
+    let coreData = CoreDataManager.sharedCoreData
 
     func saveData() {
         if let sendData = newMemoData {
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                let context = appDelegate.persistentContainer.viewContext
-
+            if let context = coreData.context {
                 let object = NSEntityDescription.insertNewObject(forEntityName: "ToDo", into: context)
                 object.setValue(sendData.id, forKey: "id")
                 object.setValue(sendData.title, forKey: "title")
@@ -37,6 +36,7 @@ class AddToDoViewModel {
                     context.rollback()
                 }
             }
+
             self.delegate?.sendData(sendData)
         }
     }
@@ -59,5 +59,9 @@ class AddToDoViewModel {
     init() {
         self.bindTextField()
         self.combineData()
+    }
+
+    deinit {
+        self.disposeBag = DisposeBag()
     }
 }

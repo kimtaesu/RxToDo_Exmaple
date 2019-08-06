@@ -9,7 +9,7 @@
 import Foundation
 
 enum ActionList {
-//    case apendItem(_ newData: String)
+    case checkItem(_ index: Int)
     case moveItem((indexList: IndexPath, destinationIndex: IndexPath))
     case deleteItem(_ index: IndexPath)
 }

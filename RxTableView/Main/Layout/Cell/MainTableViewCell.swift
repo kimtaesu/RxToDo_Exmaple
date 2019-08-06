@@ -60,7 +60,8 @@ class MainCell: UITableViewCell {
     }
 
     func check() {
-        print("RUN")
+        let actionVieModel = ActionViewModel()
+        actionVieModel.actionEvent.onNext(.checkItem(self.checkButton.tag))
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
