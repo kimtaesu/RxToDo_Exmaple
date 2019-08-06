@@ -14,11 +14,10 @@ struct SectionOfMemoData {
 }
 
 extension SectionOfMemoData: SectionModelType {
-    typealias Item = MemoData
-    
+    typealias Item = ToDoData
+
     init(original: SectionOfMemoData, items: [Item]) {
         self = original
         self.items = items
     }
 }
-

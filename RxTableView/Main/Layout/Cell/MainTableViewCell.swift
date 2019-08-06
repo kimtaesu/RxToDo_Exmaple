@@ -6,13 +6,13 @@
 //  Copyright © 2019 MilKyo. All rights reserved.
 //
 
-import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
+import UIKit
 
 class MainCell: UITableViewCell {
     var dispoaseBag = DisposeBag()
-    
+
     let checkButton: UIButton = {
         let checkButton = UIButton()
         checkButton.layer.borderWidth = 1.0
@@ -20,7 +20,7 @@ class MainCell: UITableViewCell {
         checkButton.layer.cornerRadius = 15
         return checkButton
     }()
-    
+
     let mainTitleLabel: UILabel = {
         let mainTitleLabel = UILabel()
         mainTitleLabel.textColor = .black
@@ -34,9 +34,9 @@ class MainCell: UITableViewCell {
             checkButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             checkButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             checkButton.heightAnchor.constraint(equalToConstant: 30),
-            ])
+        ])
     }
-    
+
     func makeMainTitleLabelConstraint() {
         self.mainTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -48,21 +48,21 @@ class MainCell: UITableViewCell {
 
     func bindCellUI() {
         self.checkButton.rx.tap.asDriver()
-            .do(onNext: { Void in
+            .do(onNext: { _ in
                 if self.checkButton.backgroundColor == UIColor(named: "AzureRadiance") {
                     self.checkButton.backgroundColor = .white
-                }else{
-                     self.checkButton.backgroundColor = UIColor(named: "AzureRadiance")
+                } else {
+                    self.checkButton.backgroundColor = UIColor(named: "AzureRadiance")
                 }
             })
-            .drive(onNext: check)
-            .disposed(by: dispoaseBag)
+            .drive(onNext: self.check)
+            .disposed(by: self.dispoaseBag)
     }
-    
+
     func check() {
         print("RUN")
     }
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
