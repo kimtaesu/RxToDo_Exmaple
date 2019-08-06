@@ -7,5 +7,10 @@ target 'RxToDo' do
   use_frameworks!
   pod 'RxDataSources', '~> 4.0'
   # Pods for RxTableView
-  
+  target 'RxToDoTests' do
+    inherit! :search_paths
+    pod 'RxBlocking', '~> 4'
+    pod 'RxTest', '~> 4'
+    pod 'Cuckoo'
+  end
 end

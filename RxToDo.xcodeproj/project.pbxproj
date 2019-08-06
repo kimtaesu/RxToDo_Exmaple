@@ -26,8 +26,21 @@
 		B4C5EF7C22F9527D00CFEC19 /* ActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7B22F9527D00CFEC19 /* ActionViewModel.swift */; };
 		B4C5EF7E22F953FB00CFEC19 /* MainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7D22F953FB00CFEC19 /* MainDataManager.swift */; };
 		B4C5EF8022F975B500CFEC19 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5EF7F22F975B500CFEC19 /* CoreDataManager.swift */; };
+		BD3297F222F9C0040097C2E7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3297F122F9C0040097C2E7 /* main.swift */; };
+		BD3297F422F9C01C0097C2E7 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3297F322F9C01C0097C2E7 /* TestAppDelegate.swift */; };
+		BD6C263122F9BBC400FC1648 /* RxToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6C263022F9BBC400FC1648 /* RxToDoTests.swift */; };
 		F441874CA468F4A67D9A6196 /* Pods_RxToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F2356849BA18A48B14786F /* Pods_RxToDo.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD6C263322F9BBC400FC1648 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B413842D22EE7F6A00B14BEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B413843422EE7F6A00B14BEF;
+			remoteInfo = RxToDo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2B6220163688A5D338EC117B /* Pods-RxToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDo.release.xcconfig"; path = "Target Support Files/Pods-RxToDo/Pods-RxToDo.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +68,11 @@
 		B4C5EF7B22F9527D00CFEC19 /* ActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewModel.swift; sourceTree = "<group>"; };
 		B4C5EF7D22F953FB00CFEC19 /* MainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataManager.swift; sourceTree = "<group>"; };
 		B4C5EF7F22F975B500CFEC19 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BD3297F122F9C0040097C2E7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BD3297F322F9C01C0097C2E7 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
+		BD6C262E22F9BBC400FC1648 /* RxToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD6C263022F9BBC400FC1648 /* RxToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxToDoTests.swift; sourceTree = "<group>"; };
+		BD6C263222F9BBC400FC1648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF4F20EC97EE7DED06631148 /* Pods_RxTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1EBACDB5B9CDE77B93C449 /* Pods-RxToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxToDo.debug.xcconfig"; path = "Target Support Files/Pods-RxToDo/Pods-RxToDo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +83,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F441874CA468F4A67D9A6196 /* Pods_RxToDo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6C262B22F9BBC400FC1648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B413843722EE7F6A00B14BEF /* RxToDo */,
+				BD6C262F22F9BBC400FC1648 /* RxToDoTests */,
 				B413843622EE7F6A00B14BEF /* Products */,
 				7F661D300BAB96F0F8921D7B /* Pods */,
 				40ED79BA6297D60F1434863D /* Frameworks */,
@@ -105,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				B413843522EE7F6A00B14BEF /* RxToDo.app */,
+				BD6C262E22F9BBC400FC1648 /* RxToDoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +147,7 @@
 				B413844122EE7F6C00B14BEF /* LaunchScreen.storyboard */,
 				B413844422EE7F6C00B14BEF /* Info.plist */,
 				B4168B2122F7F98100B1C050 /* RxToDo.xcdatamodeld */,
+				BD3297F122F9C0040097C2E7 /* main.swift */,
 			);
 			path = RxToDo;
 			sourceTree = "<group>";
@@ -200,6 +228,16 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		BD6C262F22F9BBC400FC1648 /* RxToDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD6C263022F9BBC400FC1648 /* RxToDoTests.swift */,
+				BD6C263222F9BBC400FC1648 /* Info.plist */,
+				BD3297F322F9C01C0097C2E7 /* TestAppDelegate.swift */,
+			);
+			path = RxToDoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,6 +260,24 @@
 			productReference = B413843522EE7F6A00B14BEF /* RxToDo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BD6C262D22F9BBC400FC1648 /* RxToDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD6C263722F9BBC400FC1648 /* Build configuration list for PBXNativeTarget "RxToDoTests" */;
+			buildPhases = (
+				BD6C262A22F9BBC400FC1648 /* Sources */,
+				BD6C262B22F9BBC400FC1648 /* Frameworks */,
+				BD6C262C22F9BBC400FC1648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD6C263422F9BBC400FC1648 /* PBXTargetDependency */,
+			);
+			name = RxToDoTests;
+			productName = RxToDoTests;
+			productReference = BD6C262E22F9BBC400FC1648 /* RxToDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,6 +290,10 @@
 				TargetAttributes = {
 					B413843422EE7F6A00B14BEF = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					BD6C262D22F9BBC400FC1648 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B413843422EE7F6A00B14BEF;
 					};
 				};
 			};
@@ -251,6 +311,7 @@
 			projectRoot = "";
 			targets = (
 				B413843422EE7F6A00B14BEF /* RxToDo */,
+				BD6C262D22F9BBC400FC1648 /* RxToDoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +323,13 @@
 			files = (
 				B413844322EE7F6C00B14BEF /* LaunchScreen.storyboard in Resources */,
 				B413844022EE7F6C00B14BEF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD6C262C22F9BBC400FC1648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +397,7 @@
 			files = (
 				B4168AF922F7E3EA00B1C050 /* SectionOfMemoData.swift in Sources */,
 				B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */,
+				BD3297F222F9C0040097C2E7 /* main.swift in Sources */,
 				B44B173022F90EB600813EDB /* DatePickerAlertController.swift in Sources */,
 				B413843B22EE7F6A00B14BEF /* MainView.swift in Sources */,
 				B4C5EF8022F975B500CFEC19 /* CoreDataManager.swift in Sources */,
@@ -347,7 +416,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD6C262A22F9BBC400FC1648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3297F422F9C01C0097C2E7 /* TestAppDelegate.swift in Sources */,
+				BD6C263122F9BBC400FC1648 /* RxToDoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD6C263422F9BBC400FC1648 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B413843422EE7F6A00B14BEF /* RxToDo */;
+			targetProxy = BD6C263322F9BBC400FC1648 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B413844122EE7F6C00B14BEF /* LaunchScreen.storyboard */ = {
@@ -515,6 +601,46 @@
 			};
 			name = Release;
 		};
+		BD6C263522F9BBC400FC1648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576T8HK6X4;
+				INFOPLIST_FILE = RxToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.RxToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxToDo.app/RxToDo";
+			};
+			name = Debug;
+		};
+		BD6C263622F9BBC400FC1648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 576T8HK6X4;
+				INFOPLIST_FILE = RxToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.RxToDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxToDo.app/RxToDo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -532,6 +658,15 @@
 			buildConfigurations = (
 				B413844822EE7F6C00B14BEF /* Debug */,
 				B413844922EE7F6C00B14BEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD6C263722F9BBC400FC1648 /* Build configuration list for PBXNativeTarget "RxToDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD6C263522F9BBC400FC1648 /* Debug */,
+				BD6C263622F9BBC400FC1648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
