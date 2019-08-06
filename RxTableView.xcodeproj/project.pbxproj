@@ -14,11 +14,15 @@
 		B413844322EE7F6C00B14BEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B413844122EE7F6C00B14BEF /* LaunchScreen.storyboard */; };
 		B413844B22EE823300B14BEF /* MainLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413844A22EE823300B14BEF /* MainLayout.swift */; };
 		B413844D22EE832100B14BEF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413844C22EE832100B14BEF /* MainTableViewCell.swift */; };
-		B4168AF422F7E33500B1C050 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168AF322F7E33500B1C050 /* MemoData.swift */; };
+		B4168AF422F7E33500B1C050 /* ToDoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168AF322F7E33500B1C050 /* ToDoData.swift */; };
 		B4168AF922F7E3EA00B1C050 /* SectionOfMemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168AF822F7E3EA00B1C050 /* SectionOfMemoData.swift */; };
 		B4168AFC22F7E83300B1C050 /* ActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168AFB22F7E83300B1C050 /* ActionList.swift */; };
 		B4168AFF22F7E8C600B1C050 /* AddToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168AFE22F7E8C600B1C050 /* AddToDoView.swift */; };
 		B4168B2322F7F98100B1C050 /* RxToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4168B2122F7F98100B1C050 /* RxToDo.xcdatamodeld */; };
+		B4168B2522F7FBDE00B1C050 /* AddTodoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168B2422F7FBDE00B1C050 /* AddTodoLayout.swift */; };
+		B4168B2722F8056000B1C050 /* AddToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4168B2622F8056000B1C050 /* AddToDoViewModel.swift */; };
+		B44B173022F90EB600813EDB /* DatePickerAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B172F22F90EB600813EDB /* DatePickerAlertController.swift */; };
+		B44B173322F9437900813EDB /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44B173222F9437900813EDB /* Delegate.swift */; };
 		B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,11 +37,15 @@
 		B413844422EE7F6C00B14BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B413844A22EE823300B14BEF /* MainLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLayout.swift; sourceTree = "<group>"; };
 		B413844C22EE832100B14BEF /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		B4168AF322F7E33500B1C050 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		B4168AF322F7E33500B1C050 /* ToDoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoData.swift; sourceTree = "<group>"; };
 		B4168AF822F7E3EA00B1C050 /* SectionOfMemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfMemoData.swift; sourceTree = "<group>"; };
 		B4168AFB22F7E83300B1C050 /* ActionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionList.swift; sourceTree = "<group>"; };
 		B4168AFE22F7E8C600B1C050 /* AddToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoView.swift; sourceTree = "<group>"; };
 		B4168B2222F7F98100B1C050 /* RxToDO.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RxToDO.xcdatamodel; sourceTree = "<group>"; };
+		B4168B2422F7FBDE00B1C050 /* AddTodoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoLayout.swift; sourceTree = "<group>"; };
+		B4168B2622F8056000B1C050 /* AddToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewModel.swift; sourceTree = "<group>"; };
+		B44B172F22F90EB600813EDB /* DatePickerAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerAlertController.swift; sourceTree = "<group>"; };
+		B44B173222F9437900813EDB /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CF4F20EC97EE7DED06631148 /* Pods_RxTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,7 +115,7 @@
 		B4168AF722F7E37900B1C050 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B4168AF322F7E33500B1C050 /* MemoData.swift */,
+				B4168AF322F7E33500B1C050 /* ToDoData.swift */,
 				B4168AF822F7E3EA00B1C050 /* SectionOfMemoData.swift */,
 			);
 			path = Model;
@@ -116,11 +124,10 @@
 		B4168AFA22F7E46B00B1C050 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B413844A22EE823300B14BEF /* MainLayout.swift */,
+				B443E0FD22F855C000500519 /* Layout */,
+				B443E0FC22F855AD00500519 /* enum */,
 				B413843A22EE7F6A00B14BEF /* MainView.swift */,
 				B45051CE22EF35FD00F3F2B0 /* MainViewModel.swift */,
-				B413844C22EE832100B14BEF /* MainTableViewCell.swift */,
-				B4168AFB22F7E83300B1C050 /* ActionList.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -128,9 +135,54 @@
 		B4168AFD22F7E8AD00B1C050 /* AddToDo */ = {
 			isa = PBXGroup;
 			children = (
+				B44B173122F9436D00813EDB /* Protocol */,
+				B443E0FE22F866DF00500519 /* Layout */,
 				B4168AFE22F7E8C600B1C050 /* AddToDoView.swift */,
+				B4168B2622F8056000B1C050 /* AddToDoViewModel.swift */,
 			);
 			path = AddToDo;
+			sourceTree = "<group>";
+		};
+		B443E0FB22F8559600500519 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B413844C22EE832100B14BEF /* MainTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B443E0FC22F855AD00500519 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				B4168AFB22F7E83300B1C050 /* ActionList.swift */,
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
+		B443E0FD22F855C000500519 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				B443E0FB22F8559600500519 /* Cell */,
+				B413844A22EE823300B14BEF /* MainLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		B443E0FE22F866DF00500519 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				B4168B2422F7FBDE00B1C050 /* AddTodoLayout.swift */,
+				B44B172F22F90EB600813EDB /* DatePickerAlertController.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		B44B173122F9436D00813EDB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B44B173222F9437900813EDB /* Delegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,12 +314,16 @@
 			files = (
 				B4168AF922F7E3EA00B1C050 /* SectionOfMemoData.swift in Sources */,
 				B45051CF22EF35FD00F3F2B0 /* MainViewModel.swift in Sources */,
+				B44B173022F90EB600813EDB /* DatePickerAlertController.swift in Sources */,
 				B413843B22EE7F6A00B14BEF /* MainView.swift in Sources */,
 				B413844B22EE823300B14BEF /* MainLayout.swift in Sources */,
-				B4168AF422F7E33500B1C050 /* MemoData.swift in Sources */,
+				B4168B2722F8056000B1C050 /* AddToDoViewModel.swift in Sources */,
+				B4168AF422F7E33500B1C050 /* ToDoData.swift in Sources */,
 				B4168AFC22F7E83300B1C050 /* ActionList.swift in Sources */,
 				B413844D22EE832100B14BEF /* MainTableViewCell.swift in Sources */,
 				B4168B2322F7F98100B1C050 /* RxToDo.xcdatamodeld in Sources */,
+				B44B173322F9437900813EDB /* Delegate.swift in Sources */,
+				B4168B2522F7FBDE00B1C050 /* AddTodoLayout.swift in Sources */,
 				B413843922EE7F6A00B14BEF /* AppDelegate.swift in Sources */,
 				B4168AFF22F7E8C600B1C050 /* AddToDoView.swift in Sources */,
 			);
@@ -415,10 +471,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = meo.app.RxTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = meo.app.RxToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -434,10 +490,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = meo.app.RxTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = meo.app.RxToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
