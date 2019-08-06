@@ -9,8 +9,7 @@ target 'RxToDo' do
   # Pods for RxTableView
   target 'RxToDoTests' do
     inherit! :search_paths
-    pod 'RxBlocking', '~> 4'
-    pod 'RxTest', '~> 4'
-    pod 'Cuckoo'
+    pod 'RxBlocking'
+    pod 'RxTest'
   end
 end

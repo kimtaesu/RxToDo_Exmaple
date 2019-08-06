@@ -40,7 +40,7 @@ class ActionViewModel {
         }
 
         do {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ToDo")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: TODO_ENTIRY_NAME)
             let toDoData = try context.fetch(fetchRequest)
 
             for content in toDoData {
@@ -66,7 +66,7 @@ class ActionViewModel {
         guard let context = coreData.context else {
             return
         }
-        let nsToDoRequest = NSFetchRequest<NSManagedObject>(entityName: "ToDo")
+        let nsToDoRequest = NSFetchRequest<NSManagedObject>(entityName: TODO_ENTIRY_NAME)
 
         do {
             let toDoData = try context.fetch(nsToDoRequest)

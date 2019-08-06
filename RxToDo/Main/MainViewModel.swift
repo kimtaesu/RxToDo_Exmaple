@@ -12,7 +12,7 @@ import Foundation
 class MainViewModel: SendDataDelegate {
     var mainData = MainDataManager.sharedMainData
     var coreData = CoreDataManager.sharedCoreData
-
+    
     func defaultData() {
         var loadMemo = [ToDoData]()
 
@@ -20,7 +20,7 @@ class MainViewModel: SendDataDelegate {
             guard let context = coreData.context else {
                 return
             }
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ToDo")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: TODO_ENTIRY_NAME)
             let loadData = try context.fetch(fetchRequest)
 
             for index in loadData {

@@ -24,7 +24,7 @@ class AddToDoViewModel {
     func saveData() {
         if let sendData = newMemoData {
             if let context = coreData.context {
-                let object = NSEntityDescription.insertNewObject(forEntityName: "ToDo", into: context)
+                let object = NSEntityDescription.insertNewObject(forEntityName: TODO_ENTIRY_NAME, into: context)
                 object.setValue(sendData.id, forKey: "id")
                 object.setValue(sendData.title, forKey: "title")
                 object.setValue(sendData.date, forKey: "date")
